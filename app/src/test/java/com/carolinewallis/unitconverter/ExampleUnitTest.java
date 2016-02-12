@@ -1,4 +1,4 @@
-package com.carolinewallis.unitconverter;
+package com.carolinewallis.unitconverter2;
 
 import org.junit.Test;
 

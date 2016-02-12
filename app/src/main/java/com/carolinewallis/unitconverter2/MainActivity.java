@@ -1,11 +1,8 @@
-package com.carolinewallis.unitconverter;
+package com.carolinewallis.unitconverter2;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +14,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.awt.font.TextAttribute;
-import java.text.AttributedString;
-
 public class MainActivity extends AppCompatActivity {
 
     private EditText numberToBeConvertedEditText;
@@ -27,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(com.carolinewallis.unitconverter2.R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(com.carolinewallis.unitconverter2.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        numberToBeConvertedEditText = (EditText)findViewById(R.id.num_to_be_converted_edit_text);
+        numberToBeConvertedEditText = (EditText)findViewById(com.carolinewallis.unitconverter2.R.id.num_to_be_converted_edit_text);
 
         //put units into an array
         String[] unitsToConvert = {"inches \u2192 mm", "lb mass → kg", "lb force → kN",
@@ -43,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, unitsToConvert);*/
 
         ListAdapter theAdapter = new ArrayAdapter<String>(this,
-                R.layout.row_layout, R.id.textForList, unitsToConvert);
+                com.carolinewallis.unitconverter2.R.layout.row_layout, com.carolinewallis.unitconverter2.R.id.textForList, unitsToConvert);
 
        //get the view object that we convert to a ListView, declared final b/c used in inner method
-        final ListView unitsListView = (ListView) findViewById(R.id.unitsListView);
+        final ListView unitsListView = (ListView) findViewById(com.carolinewallis.unitconverter2.R.id.unitsListView);
 
         //send the data (from array) to the ListView
         unitsListView.setAdapter(theAdapter);
@@ -81,13 +75,13 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
 
                     //Find each TextView and send the results to be displayed
-                    TextView convertedResultTextView = (TextView) findViewById(R.id.converted_result_text_view);
+                    TextView convertedResultTextView = (TextView) findViewById(com.carolinewallis.unitconverter2.R.id.converted_result_text_view);
                     convertedResultTextView.setText(results[0]);
 
-                    TextView unitFromTextView = (TextView) findViewById(R.id.unit_from_text_view);
+                    TextView unitFromTextView = (TextView) findViewById(com.carolinewallis.unitconverter2.R.id.unit_from_text_view);
                     unitFromTextView.setText(results[1]);
 
-                    TextView unitToTextView = (TextView) findViewById(R.id.unit_to_text_view);
+                    TextView unitToTextView = (TextView) findViewById(com.carolinewallis.unitconverter2.R.id.unit_to_text_view);
                     unitToTextView.setText(results[2]);
                 }
             }
@@ -168,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(com.carolinewallis.unitconverter2.R.menu.menu_main, menu);
         return true;
     }
 
@@ -180,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == com.carolinewallis.unitconverter2.R.id.action_settings) {
             return true;
         }
 
@@ -189,11 +183,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void editTextClick(View view) {
         numberToBeConvertedEditText.setText("");
-        TextView convertedResultTextView = (TextView) findViewById(R.id.converted_result_text_view);
+        TextView convertedResultTextView = (TextView) findViewById(com.carolinewallis.unitconverter2.R.id.converted_result_text_view);
         convertedResultTextView.setText("");
-        TextView unitFromTextView = (TextView) findViewById(R.id.unit_from_text_view);
+        TextView unitFromTextView = (TextView) findViewById(com.carolinewallis.unitconverter2.R.id.unit_from_text_view);
         unitFromTextView.setText("");
-        TextView unitToTextView = (TextView) findViewById(R.id.unit_to_text_view);
+        TextView unitToTextView = (TextView) findViewById(com.carolinewallis.unitconverter2.R.id.unit_to_text_view);
         unitToTextView.setText("");
 
     }
