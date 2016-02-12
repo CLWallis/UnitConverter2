@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="10dp"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.carolinewallis.unitconverter.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:inputType="numberDecimal|numberSigned"
+            android:id="@+id/num_to_be_converted_edit_text"
+            android:onClick="editTextClick"
+            android:background="#ffffff" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:textSize="25sp"
+            android:background="#d9d9d9"
+            android:gravity="center"
+            android:id="@+id/converted_result_text_view"
+            android:textColor="#cc0000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:textSize="25sp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:id="@+id/unit_from_text_view"
+            android:textColor="#020202" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:textSize="25sp"
+            android:background="#d9d9d9"
+            android:gravity="center"
+            android:id="@+id/unit_to_text_view"
+            android:textColor="#cc0000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/unitsListView">
+        </ListView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Courtesy of Caroline"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#d9d9d9"
+        android:layout_gravity="left"
+        android:paddingLeft="5dp"/>
+
+
+</LinearLayout>
