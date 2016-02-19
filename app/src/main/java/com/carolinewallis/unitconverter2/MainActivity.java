@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         //put units into an array
         String[] unitsToConvert = {"inches \u2192 mm", "lb mass → kg", "lb force → kN",
-                "lbs/ft\u00b2 → kN/m\u00b2", "Fahrenheit → Celsius", "mm → inches",
-                "kg → lb mass","kN → lb force", "kN/m² → lbs/ft²", "Celsius → Fahrenheit"};
+                "lbs/ft\u00b2 → kN/m\u00b2", "Fahrenheit → Celsius", "HP → kW", "mm → inches",
+                "kg → lb mass","kN → lb force", "kN/m² → lbs/ft²", "Celsius → Fahrenheit", "kW → HP"};
 
         //made adapter so the array can work with the list
        /*ListAdapter theAdapter = new ArrayAdapter<String>(this,
@@ -128,30 +128,40 @@ public class MainActivity extends AppCompatActivity {
                     unitTwo = "Celsius";
                     break;
                 case "5":
+                    result = Math.round((numberToBeConverted * 0.746) * 1000) / 1000D;
+                    unitOne = "HP";
+                    unitTwo = "kW";
+                    break;
+                case "6":
                     result = Math.round((numberToBeConverted / 25.4) * 1000) / 1000D;
                     unitOne = "mm";
                     unitTwo = "inches";
                     break;
-                case "6":
+                case "7":
                     result = Math.round((numberToBeConverted / 0.45359237) * 1000) / 1000D;
                     unitOne = "kg";
                     unitTwo = "lb mass";
                     break;
-                case "7":
+                case "8":
                     result = Math.round((numberToBeConverted * 224.8089) * 1000) / 1000D;
                     unitOne = "kN";
                     unitTwo = "lb force";
                     break;
-                case "8":
+                case "9":
                     result = Math.round((numberToBeConverted * 20.8854) * 1000) / 1000D;
                     unitOne = "kN/m²";
                     unitTwo = "lbs/ft²";
                     break;
-                case "9":
-                    result = Math.round((numberToBeConverted * (9.0 / 5.0) + 32) * 1000) / 1000D;
+                case "10":
+                    result = Math.round(((numberToBeConverted * (9.0 / 5.0)) + 32) * 10) / 10D;
                     unitOne = "Celsius";
                     unitTwo = "Fahrenheit";
                     break;
+                case "11":
+                    result = Math.round((numberToBeConverted / 0.746) * 1000) / 1000D;
+                    unitOne = "kW";
+                    unitTwo = "HP";
+                break;
             }
 
         //convert result from decimal to string, then return all strings in an array
